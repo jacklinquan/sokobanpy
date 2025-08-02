@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="description" content="Sokoban in Python." /><meta name="author" content="Quan Lin" />
+      <link rel="shortcut icon" href="img/favicon.ico" />
+    <title>sokobanpy</title>
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="assets/_mkdocstrings.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Home";
+        var mkdocs_page_input_path = "index.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="." class="icon icon-home"> sokobanpy
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Home</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#what-is-sokoban">What is Sokoban?</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#objective">Objective</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#how-to-play">How to play</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="api/">API Reference</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href=".">sokobanpy</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Home</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="sokobanpy">sokobanpy</h1>
+<p><a href="https://badge.fury.io/py/sokobanpy"><img alt="PyPI version" src="https://badge.fury.io/py/sokobanpy.svg" /></a>
+<a href="https://pepy.tech/project/sokobanpy"><img alt="Downloads" src="https://pepy.tech/badge/sokobanpy" /></a></p>
+<p><a href="https://jacklinquan.github.io/sokobanpy">Documentation</a></p>
+<p>Sokoban in Python.</p>
+<ul>
+<li>Author: Quan Lin</li>
+<li>License: MIT</li>
+</ul>
+<hr />
+<h2 id="what-is-sokoban">What is Sokoban?</h2>
+<p>Sokoban is a classic puzzle game
+where the player pushes boxes onto designated goal positions within a warehouse-like environment.
+The game is played on a grid, and each element is represented by a standard character:</p>
+<ul>
+<li><code>"#"</code>: Wall</li>
+<li><code>"@"</code>: Player (Sokoban)</li>
+<li><code>"$"</code>: Box</li>
+<li><code>"."</code>: Goal</li>
+<li><code>"*"</code>: Box on a goal</li>
+<li><code>"+"</code>: Player on a goal</li>
+<li><code>" "</code>: Empty space</li>
+</ul>
+<h3 id="objective">Objective</h3>
+<p>Move all boxes (<code>"$"</code>) onto the goal positions (<code>"."</code>) using the player (<code>"@"</code>).
+Boxes can only be pushed (not pulled), and only one box can be pushed at a time.
+The player cannot move through walls or boxes.</p>
+<h3 id="how-to-play">How to play</h3>
+<p>Use directional controls to move the player.
+Strategically plan moves to avoid pushing boxes into corners or against walls
+where they can't be retrieved.
+The puzzle is solved when all boxes are on goal tiles (<code>"*"</code>).</p>
+<hr />
+<h2 id="installation">Installation</h2>
+<pre><code class="language-shell">pip install sokobanpy
+</code></pre>
+<hr />
+<h2 id="usage">Usage</h2>
+<p>A simple example:</p>
+<pre><code class="language-python">from sokobanpy import Sokoban
+level_string = (
+    &quot;&quot;
+    + &quot;##########\n&quot;
+    + &quot;#        #\n&quot;
+    + &quot;#  $  +  #\n&quot;
+    + &quot;#        #\n&quot;
+    + &quot;##########\n&quot;
+)
+game = Sokoban(level_string, undo_limit=256)
+while True:
+    print(game)
+    print(f&quot;nmove={game.nmove}, npush={game.npush}&quot;)
+    if game.is_solved():
+        print(&quot;Level Solved!&quot;)
+        break
+    action = input(&quot;Player Action (w,a,s,d,u,q): &quot;)
+    if action == &quot;w&quot;:
+        game.move(Sokoban.UP)
+    elif action == &quot;a&quot;:
+        game.move(Sokoban.LEFT)
+    elif action == &quot;s&quot;:
+        game.move(Sokoban.DOWN)
+    elif action == &quot;d&quot;:
+        game.move(Sokoban.RIGHT)
+    elif action == &quot;u&quot;:
+        game.undo()
+    elif action == &quot;q&quot;:
+        break
+</code></pre>
+<p>There are more examples in
+<a href="https://github.com/jacklinquan/sokobanpy/tree/main/examples">examples</a>
+directory.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="api/" class="btn btn-neutral float-right" title="API Reference">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>Copyright &copy; 2025 <a href="https://github.com/jacklinquan">Quan Lin</a>.</p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/jacklinquan/sokobanpy" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+    
+      <span><a href="api/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = ".";</script>
+    <script src="js/theme_extra.js"></script>
+    <script src="js/theme.js"></script>
+      <script src="search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 1.6.1
+Build Date UTC : 2025-08-02 11:12:14.789129+00:00
+-->

@@ -1,0 +1,1328 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Quan Lin" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>API Reference - sokobanpy</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../assets/_mkdocstrings.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "API Reference";
+        var mkdocs_page_input_path = "api.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> sokobanpy
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">API Reference</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#sokobanpy">sokobanpy</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#sokobanpy.SokobanVector">SokobanVector</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#sokobanpy.SokobanVector.__init__">__init__</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#sokobanpy.SokobanVector.__repr__">__repr__</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#sokobanpy.SokobanVector.__add__">__add__</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#sokobanpy.SokobanVector.__sub__">__sub__</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#sokobanpy.SokobanVector.__neg__">__neg__</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#sokobanpy.SokobanVector.__eq__">__eq__</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#sokobanpy.SokobanVector.__hash__">__hash__</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#sokobanpy.Sokoban">Sokoban</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#sokobanpy.Sokoban.__init__">__init__</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#sokobanpy.Sokoban.__str__">__str__</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#sokobanpy.Sokoban.to_grid">to_grid</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#sokobanpy.Sokoban.covers">covers</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#sokobanpy.Sokoban.can_move">can_move</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#sokobanpy.Sokoban.move">move</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#sokobanpy.Sokoban.undo">undo</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#sokobanpy.Sokoban.is_solved">is_solved</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#sokobanpy.Sokoban.find_path">find_path</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">sokobanpy</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">API Reference</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="api-reference">API Reference</h1>
+<hr />
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="sokobanpy" class="doc doc-heading">
+            <code>sokobanpy</code>
+
+
+</h2>
+
+    <div class="doc doc-contents first">
+
+        <p>Sokoban in Python</p>
+<ul>
+<li>Author: Quan Lin</li>
+<li>License: MIT</li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-python">from sokobanpy import Sokoban
+level_string = (
+    &quot;&quot;
+    + &quot;##########
+&quot;
+    + &quot;#        #
+&quot;
+    + &quot;#  $  +  #
+&quot;
+    + &quot;#        #
+&quot;
+    + &quot;##########
+&quot;
+)
+game = Sokoban(level_string, undo_limit=256)
+while True:
+    print(game)
+    print(f&quot;nmove={game.nmove}, npush={game.npush}&quot;)
+    if game.is_solved():
+        print(&quot;Level Solved!&quot;)
+        break
+    action = input(&quot;Player Action (w,a,s,d,u,q): &quot;)
+    if action == &quot;w&quot;:
+        game.move(Sokoban.UP)
+    elif action == &quot;a&quot;:
+        game.move(Sokoban.LEFT)
+    elif action == &quot;s&quot;:
+        game.move(Sokoban.DOWN)
+    elif action == &quot;d&quot;:
+        game.move(Sokoban.RIGHT)
+    elif action == &quot;u&quot;:
+        game.undo()
+    elif action == &quot;q&quot;:
+        break
+</code></pre>
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="sokobanpy.SokobanVector" class="doc doc-heading">
+            <code>sokobanpy.SokobanVector</code>
+
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+
+        <p>Represents a position or directional offset on a Sokoban board.</p>
+<p>Encapsulates a 2D coordinate (row and column) and supports vector-style
+operations like addition, negation, equality, and hashing.</p>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Attributes:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>r</code></b>
+                  (<code><span title="int">int</span></code>)
+              –
+              <div class="doc-md-description">
+                <p>Row index of the position.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>c</code></b>
+                  (<code><span title="int">int</span></code>)
+              –
+              <div class="doc-md-description">
+                <p>Column index of the position.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="sokobanpy.SokobanVector.__init__" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">sokobanpy</span><span class="o">.</span><span class="n">SokobanVector</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Initialize a SokobanVector instance.</p>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>r</code></b>
+                  (<code><span title="int">int</span></code>)
+              –
+              <div class="doc-md-description">
+                <p>Row index or row component of a direction vector.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>c</code></b>
+                  (<code><span title="int">int</span></code>)
+              –
+              <div class="doc-md-description">
+                <p>Column index or column component of a direction vector.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="sokobanpy.SokobanVector.__repr__" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">sokobanpy</span><span class="o">.</span><span class="n">SokobanVector</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">()</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return a human-readable string representation.</p>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Returns:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+<b><code>str</code></b>              –
+              <div class="doc-md-description">
+                <p>String in the form "SokobanVector(r=<row>, c=<col>)".</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="sokobanpy.SokobanVector.__add__" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">sokobanpy</span><span class="o">.</span><span class="n">SokobanVector</span><span class="o">.</span><span class="fm">__add__</span><span class="p">(</span><span class="n">other</span><span class="p">)</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Add two SokobanVector vectors element-wise.</p>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>other</code></b>
+                  (<code><a class="autorefs autorefs-internal" title="sokobanpy.SokobanVector (sokobanpy.sokobanpy.SokobanVector)" href="#sokobanpy.SokobanVector">SokobanVector</a></code>)
+              –
+              <div class="doc-md-description">
+                <p>Another position or offset.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Returns:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+<b><code>SokobanVector</code></b>              –
+              <div class="doc-md-description">
+                <p>New instance whose row and column are the sums.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Raises:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+                  <code><span title="TypeError">TypeError</span></code>
+              –
+              <div class="doc-md-description">
+                <p>If <code>other</code> is not a SokobanVector instance.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="sokobanpy.SokobanVector.__sub__" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">sokobanpy</span><span class="o">.</span><span class="n">SokobanVector</span><span class="o">.</span><span class="fm">__sub__</span><span class="p">(</span><span class="n">other</span><span class="p">)</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Subtract another SokobanVector from this SokobanVector.</p>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>other</code></b>
+                  (<code><a class="autorefs autorefs-internal" title="sokobanpy.SokobanVector (sokobanpy.sokobanpy.SokobanVector)" href="#sokobanpy.SokobanVector">SokobanVector</a></code>)
+              –
+              <div class="doc-md-description">
+                <p>Another position or offset.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Returns:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+<b><code>SokobanVector</code></b>              –
+              <div class="doc-md-description">
+                <p>New instance whose row and column are the results.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Raises:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+                  <code><span title="TypeError">TypeError</span></code>
+              –
+              <div class="doc-md-description">
+                <p>If <code>other</code> is not a SokobanVector instance.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="sokobanpy.SokobanVector.__neg__" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">sokobanpy</span><span class="o">.</span><span class="n">SokobanVector</span><span class="o">.</span><span class="fm">__neg__</span><span class="p">()</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Invert this vector (negate both row and column).</p>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Returns:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+<b><code>SokobanVector</code></b>              –
+              <div class="doc-md-description">
+                <p>New instance with both components negated.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="sokobanpy.SokobanVector.__eq__" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">sokobanpy</span><span class="o">.</span><span class="n">SokobanVector</span><span class="o">.</span><span class="fm">__eq__</span><span class="p">(</span><span class="n">other</span><span class="p">)</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Check equality by comparing row and column.</p>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>other</code></b>
+                  (<code><span title="object">object</span></code>)
+              –
+              <div class="doc-md-description">
+                <p>Object to compare.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Returns:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+<b><code>bool</code></b>              –
+              <div class="doc-md-description">
+                <p>True if <code>other</code> is a SokobanVector with the same r and c.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="sokobanpy.SokobanVector.__hash__" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">sokobanpy</span><span class="o">.</span><span class="n">SokobanVector</span><span class="o">.</span><span class="fm">__hash__</span><span class="p">()</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Compute a hash so positions can be used in sets and dict keys.</p>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Returns:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+<b><code>int</code></b>              –
+              <div class="doc-md-description">
+                <p>Hash of the (row, column) tuple.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="sokobanpy.Sokoban" class="doc doc-heading">
+            <code>sokobanpy.Sokoban</code>
+
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+
+        <p>Sokoban puzzle game representation and logic.</p>
+<p>This class manages the game board, including walls, goals, boxes, and the player,
+and supports loading levels, rendering the board, executing moves, undoing moves,
+and checking for a solved state.</p>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Attributes:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>player</code></b>
+                  (<code><a class="autorefs autorefs-internal" title="sokobanpy.SokobanVector (sokobanpy.sokobanpy.SokobanVector)" href="#sokobanpy.SokobanVector">SokobanVector</a></code>)
+              –
+              <div class="doc-md-description">
+                <p>Current player position.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>walls</code></b>
+                  (<code><span title="set">set</span>[<a class="autorefs autorefs-internal" title="sokobanpy.SokobanVector (sokobanpy.sokobanpy.SokobanVector)" href="#sokobanpy.SokobanVector">SokobanVector</a>]</code>)
+              –
+              <div class="doc-md-description">
+                <p>Positions of walls.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>goals</code></b>
+                  (<code><span title="set">set</span>[<a class="autorefs autorefs-internal" title="sokobanpy.SokobanVector (sokobanpy.sokobanpy.SokobanVector)" href="#sokobanpy.SokobanVector">SokobanVector</a>]</code>)
+              –
+              <div class="doc-md-description">
+                <p>Positions of goals.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>boxes</code></b>
+                  (<code><span title="set">set</span>[<a class="autorefs autorefs-internal" title="sokobanpy.SokobanVector (sokobanpy.sokobanpy.SokobanVector)" href="#sokobanpy.SokobanVector">SokobanVector</a>]</code>)
+              –
+              <div class="doc-md-description">
+                <p>Positions of boxes.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>nrow</code></b>
+                  (<code><span title="int">int</span></code>)
+              –
+              <div class="doc-md-description">
+                <p>Number of rows in the level.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>ncol</code></b>
+                  (<code><span title="int">int</span></code>)
+              –
+              <div class="doc-md-description">
+                <p>Number of columns in the level.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>nmove</code></b>
+                  (<code><span title="int">int</span></code>)
+              –
+              <div class="doc-md-description">
+                <p>Number of moves made.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>npush</code></b>
+                  (<code><span title="int">int</span></code>)
+              –
+              <div class="doc-md-description">
+                <p>Number of box pushes made.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>history</code></b>
+                  (<code><span title="collections.deque">deque</span></code>)
+              –
+              <div class="doc-md-description">
+                <p>Move history for undo.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>undo_limit</code></b>
+                  (<code><span title="int">int</span> | None</code>)
+              –
+              <div class="doc-md-description">
+                <p>Maximum undo history size.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="sokobanpy.Sokoban.__init__" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">sokobanpy</span><span class="o">.</span><span class="n">Sokoban</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">level_string</span><span class="o">=</span><span class="n">DEFAULT_LEVEL_STRING</span><span class="p">,</span> <span class="n">undo_limit</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Initialize Sokoban from a level string.</p>
+<p>Parses the given <code>level_string</code> into the internal state and sets an optional undo limit.</p>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>level_string</code></b>
+                  (<code><span title="str">str</span></code>, default:
+                      <code><span title="sokobanpy.sokobanpy.DEFAULT_LEVEL_STRING">DEFAULT_LEVEL_STRING</span></code>
+)
+              –
+              <div class="doc-md-description">
+                <p>Multi-line string defining the initial board layout.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>undo_limit</code></b>
+                  (<code><span title="int">int</span> | None</code>, default:
+                      <code>None</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>Maximum number of moves to store for undo; None for unlimited.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="sokobanpy.Sokoban.__str__" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">sokobanpy</span><span class="o">.</span><span class="n">Sokoban</span><span class="o">.</span><span class="fm">__str__</span><span class="p">()</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return a string representation of the current board.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="sokobanpy.Sokoban.to_grid" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">sokobanpy</span><span class="o">.</span><span class="n">Sokoban</span><span class="o">.</span><span class="n">to_grid</span><span class="p">()</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Render the current game state as a 2D grid of characters.</p>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Returns:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              –
+              <div class="doc-md-description">
+                <p>list[list[str]]: 2D array representing the board layout.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="sokobanpy.Sokoban.covers" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">sokobanpy</span><span class="o">.</span><span class="n">Sokoban</span><span class="o">.</span><span class="n">covers</span><span class="p">(</span><span class="n">position</span><span class="p">)</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Check if a position is within board bounds.</p>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>position</code></b>
+                  (<code><a class="autorefs autorefs-internal" title="sokobanpy.SokobanVector (sokobanpy.sokobanpy.SokobanVector)" href="#sokobanpy.SokobanVector">SokobanVector</a></code>)
+              –
+              <div class="doc-md-description">
+                <p>Position to check.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Returns:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+<b><code>bool</code></b>              –
+              <div class="doc-md-description">
+                <p>True if position is on the board; False otherwise.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="sokobanpy.Sokoban.can_move" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">sokobanpy</span><span class="o">.</span><span class="n">Sokoban</span><span class="o">.</span><span class="n">can_move</span><span class="p">(</span><span class="n">direction</span><span class="p">)</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return whether the player can move in the given direction.</p>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>direction</code></b>
+                  (<code><a class="autorefs autorefs-internal" title="sokobanpy.SokobanVector (sokobanpy.sokobanpy.SokobanVector)" href="#sokobanpy.SokobanVector">SokobanVector</a></code>)
+              –
+              <div class="doc-md-description">
+                <p>Direction vector.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Returns:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+<b><code>bool</code></b>              –
+              <div class="doc-md-description">
+                <p>True if move is legal; False otherwise.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="sokobanpy.Sokoban.move" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">sokobanpy</span><span class="o">.</span><span class="n">Sokoban</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">direction</span><span class="p">)</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Move the player in a direction, pushing a box if necessary.</p>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>direction</code></b>
+                  (<code><a class="autorefs autorefs-internal" title="sokobanpy.SokobanVector (sokobanpy.sokobanpy.SokobanVector)" href="#sokobanpy.SokobanVector">SokobanVector</a></code>)
+              –
+              <div class="doc-md-description">
+                <p>Direction vector.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Returns:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+<b><code>bool</code></b>              –
+              <div class="doc-md-description">
+                <p>True if move executed; False if illegal.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="sokobanpy.Sokoban.undo" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">sokobanpy</span><span class="o">.</span><span class="n">Sokoban</span><span class="o">.</span><span class="n">undo</span><span class="p">()</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Undo the last move, restoring previous positions.</p>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Returns:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+<b><code>bool</code></b>              –
+              <div class="doc-md-description">
+                <p>True if an undo was performed; False if no history.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="sokobanpy.Sokoban.is_solved" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">sokobanpy</span><span class="o">.</span><span class="n">Sokoban</span><span class="o">.</span><span class="n">is_solved</span><span class="p">()</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Check if all boxes are on goal positions.</p>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Returns:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+<b><code>bool</code></b>              –
+              <div class="doc-md-description">
+                <p>True if the puzzle is solved; False otherwise.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="sokobanpy.Sokoban.find_path" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">sokobanpy</span><span class="o">.</span><span class="n">Sokoban</span><span class="o">.</span><span class="n">find_path</span><span class="p">(</span><span class="n">target_pos</span><span class="p">)</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Find a path of empty spaces from the player to target using BFS.</p>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>target_pos</code></b>
+                  (<code><a class="autorefs autorefs-internal" title="sokobanpy.SokobanVector (sokobanpy.sokobanpy.SokobanVector)" href="#sokobanpy.SokobanVector">SokobanVector</a></code>)
+              –
+              <div class="doc-md-description">
+                <p>Destination position.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Returns:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              –
+              <div class="doc-md-description">
+                <p>list[SokobanVector] | None: Sequence of positions to move through, or None if unreachable.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href=".." class="btn btn-neutral float-left" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>Copyright &copy; 2025 <a href="https://github.com/jacklinquan">Quan Lin</a>.</p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/jacklinquan/sokobanpy" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
