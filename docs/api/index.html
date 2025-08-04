@@ -138,42 +138,6 @@
 <li>Author: Quan Lin</li>
 <li>License: MIT</li>
 </ul>
-<p>Example:</p>
-<pre><code class="language-python">from sokobanpy import Sokoban
-level_string = (
-    &quot;&quot;
-    + &quot;##########
-&quot;
-    + &quot;#        #
-&quot;
-    + &quot;#  $  +  #
-&quot;
-    + &quot;#        #
-&quot;
-    + &quot;##########
-&quot;
-)
-game = Sokoban(level_string, undo_limit=256)
-while True:
-    print(game)
-    print(f&quot;nmove={game.nmove}, npush={game.npush}&quot;)
-    if game.is_solved():
-        print(&quot;Level Solved!&quot;)
-        break
-    action = input(&quot;Player Action (w,a,s,d,u,q): &quot;)
-    if action == &quot;w&quot;:
-        game.move(Sokoban.UP)
-    elif action == &quot;a&quot;:
-        game.move(Sokoban.LEFT)
-    elif action == &quot;s&quot;:
-        game.move(Sokoban.DOWN)
-    elif action == &quot;d&quot;:
-        game.move(Sokoban.RIGHT)
-    elif action == &quot;u&quot;:
-        game.undo()
-    elif action == &quot;q&quot;:
-        break
-</code></pre>
 
 
 
@@ -208,7 +172,7 @@ while True:
 
         <p>Represents a position or directional offset on a Sokoban board.</p>
 <p>Encapsulates a 2D coordinate (row and column) and supports vector-style
-operations like addition, negation, equality, and hashing.</p>
+operations like addition, subtraction, negation, equality, and hashing.</p>
 
 
 <table class="field-list">
@@ -338,7 +302,7 @@ operations like addition, negation, equality, and hashing.</p>
             <li>
 <b><code>str</code></b>              –
               <div class="doc-md-description">
-                <p>String in the form "SokobanVector(r=<row>, c=<col>)".</p>
+                <p>String in the form <code>SokobanVector(r=&lt;row&gt;, c=&lt;col&gt;)</code>.</p>
               </div>
             </li>
         </ul>

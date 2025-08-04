@@ -7,7 +7,7 @@
 from collections import deque
 
 
-__version__ = "1.1.0"
+__version__ = "1.2.0"
 
 DEFAULT_LEVEL_STRING = (
     ""
@@ -23,7 +23,7 @@ class SokobanVector:
     """Represents a position or directional offset on a Sokoban board.
 
     Encapsulates a 2D coordinate (row and column) and supports vector-style
-    operations like addition, negation, equality, and hashing.
+    operations like addition, subtraction, negation, equality, and hashing.
 
     Attributes:
         r (int): Row index of the position.
@@ -44,7 +44,7 @@ class SokobanVector:
         """Return a human-readable string representation.
 
         Returns:
-            str: String in the form "SokobanVector(r=<row>, c=<col>)".
+            str: String in the form `SokobanVector(r=<row>, c=<col>)`.
         """
         return f"{self.__class__.__name__}(r={self.r}, c={self.c})"
 

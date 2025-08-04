@@ -52,8 +52,20 @@
         </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#for-cpython">For CPython</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#for-micropython">For MicroPython</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#for-brython">For Brython</a>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#for-cpython-and-micropython">For CPython and MicroPython</a>
+    </li>
+        </ul>
     </li>
     </ul>
                 </li>
@@ -119,11 +131,32 @@ where they can't be retrieved.
 The puzzle is solved when all boxes are on goal tiles (<code>"*"</code>).</p>
 <hr />
 <h2 id="installation">Installation</h2>
+<h3 id="for-cpython">For CPython</h3>
 <pre><code class="language-shell">pip install sokobanpy
 </code></pre>
+<h3 id="for-micropython">For <a href="https://micropython.org/">MicroPython</a></h3>
+<p>If <code>mpremote</code> is not installed, install it first:</p>
+<pre><code class="language-shell">pip install mpremote
+</code></pre>
+<p>Install <code>sokobanpy</code> using <code>mpremote</code>:</p>
+<pre><code class="language-shell">mpremote mip install github:jacklinquan/sokobanpy/sokobanpy/sokobanpy.py
+</code></pre>
+<h3 id="for-brython">For <a href="https://brython.info/">Brython</a></h3>
+<p>The Python file <code>sokobanpy.py</code> can be used directly for Brython.
+Alternatively you can turn <code>sokobanpy</code> package into <code>site-packages.brython.js</code>
+for Brython by using <a href="https://github.com/rayluo/brip">brip</a>.</p>
+<p>If <code>brip</code> is not installed, install it first:</p>
+<pre><code class="language-shell">pip install brip
+</code></pre>
+<p>Install <code>sokobanpy</code> using <code>brip</code>:</p>
+<pre><code class="language-shell">brip install sokobanpy
+</code></pre>
+<p>Now a new <code>site-packages.brython.js</code> is generated in current directory.
+Your Brython project's <code>index.html</code> would just need to add a line
+<code>&lt;script src="path/to/site-packages.brython.js"&gt;&lt;/script&gt;</code></p>
 <hr />
 <h2 id="usage">Usage</h2>
-<p>A simple example:</p>
+<h3 id="for-cpython-and-micropython">For CPython and MicroPython</h3>
 <pre><code class="language-python">from sokobanpy import Sokoban
 level_string = (
     &quot;&quot;
@@ -210,5 +243,5 @@ directory.</p>
 
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 2025-08-02 11:12:14.789129+00:00
+Build Date UTC : 2025-08-04 10:27:41.186405+00:00
 -->
