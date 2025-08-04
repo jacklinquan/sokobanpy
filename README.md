@@ -46,15 +46,53 @@ The puzzle is solved when all boxes are on goal tiles (`"*"`).
 
 ## Installation
 
+### For CPython
+
 ```shell
 pip install sokobanpy
 ```
+
+### For [MicroPython](https://micropython.org/)
+
+If `mpremote` is not installed, install it first:
+
+```shell
+pip install mpremote
+```
+
+Install `sokobanpy` using `mpremote`:
+
+```shell
+mpremote mip install github:jacklinquan/sokobanpy/sokobanpy/sokobanpy.py
+```
+
+### For [Brython](https://brython.info/)
+
+The Python file `sokobanpy.py` can be used directly for Brython.
+Alternatively you can turn `sokobanpy` package into `site-packages.brython.js`
+for Brython by using [brip](https://github.com/rayluo/brip).
+
+If `brip` is not installed, install it first:
+
+```shell
+pip install brip
+```
+
+Install `sokobanpy` using `brip`:
+
+```shell
+brip install sokobanpy
+```
+
+Now a new `site-packages.brython.js` is generated in current directory.
+Your Brython project's `index.html` would just need to add a line
+`<script src="path/to/site-packages.brython.js"></script>`
 
 ---
 
 ## Usage
 
-A simple example:
+### For CPython and MicroPython
 
 ```python
 from sokobanpy import Sokoban
