@@ -7,7 +7,7 @@
 from collections import deque
 
 
-__version__ = "1.2.0"
+__version__ = "1.3.0"
 
 DEFAULT_LEVEL_STRING = (
     ""
@@ -369,11 +369,11 @@ class Sokoban:
             return None
 
         grid = self.to_grid()
-        if grid[target_pos.r][target_pos.c] != self.SPACE:
+        if grid[target_pos.r][target_pos.c] not in (self.SPACE, self.GOAL):
             return None
 
         queue = deque([(self.player, [])], self.nrow + self.ncol)
-        explored = set()
+        visited = set()
 
         while queue:
             curr_pos, curr_path = queue.popleft()
@@ -384,11 +384,11 @@ class Sokoban:
                 new_pos = curr_pos + direction
                 if (
                     self.covers(new_pos)
-                    and grid[new_pos.r][new_pos.c] == self.SPACE
-                    and (new_pos not in explored)
+                    and (grid[new_pos.r][new_pos.c] in (self.SPACE, self.GOAL))
+                    and (new_pos not in visited)
                 ):
                     new_path = curr_path + [new_pos]
                     queue.append((new_pos, new_path))
-                    explored.add(new_pos)
+                    visited.add(new_pos)
 
         return None
