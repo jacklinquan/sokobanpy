@@ -86,7 +86,10 @@ brip install sokobanpy
 
 Now a new `site-packages.brython.js` is generated in current directory.
 Your Brython project's `index.html` would just need to add a line
-`<script src="path/to/site-packages.brython.js"></script>`
+`<script src="path/to/site-packages.brython.js"></script>`.
+From now on you can use `import sokobanpy` inside your Brython project.
+
+[Play Online](https://jacklinquan.github.io/brython_bootstrap_sokoban)
 
 ---
 
